@@ -37,32 +37,6 @@ class TagData:
         test = TagData.load_data('{}/test'.format(dir), tagged=False, lowercase=lowercase)
         return train, dev, test
 
-    # @staticmethod
-    # def process_lowrecase(data):
-    #     is_lower_case = []
-    #     for sentence in data:
-    #         i = 0
-    #         for word, _ in sentence:
-    #             is_lower_case.append(word == word.lowercase())
-    #             sentence[i][0] = word.lowercase()
-    #             i += 1
-    #     return is_lower_case
-    #
-    # @staticmethod
-    # def new_load(path, tagged=True, lowercase=False):
-    #     import pandas as pd
-    #     df = pd.read_csv(path, sep=' ', header=None)
-    #     df.columns = ['val', 'tag'] if tagged else ['val']
-    #     df['val'] = df['val'].apply(lambda x: x.strip())
-    #     df['has_upper_case'] = df['val'].apply(lambda x: x==x.lower())
-    #     if lowercase:
-    #         df['val'] = df['val'].apply(lambda x: x.lower())
-    #
-    #     data = list(zip(df['val'], df['tag'])) if tagged else df['val'].tolist()
-    #
-    #     return data
-    #     # return data, df['has_upper_case'].tolist()
-
     @staticmethod
     def load_data(path, tagged=True, lowercase=False):
         data = [[]]
